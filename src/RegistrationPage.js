@@ -3,19 +3,15 @@ import './RegistrationPage.css';
 
 
 function RegistrationPage() {
-  // State hooks for each input
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  // Function to handle the form submission
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevents the default form submit action
-    // Here you would handle the registration logic or store the state
+    event.preventDefault();
     console.log('Submitted:', { username, password, confirmPassword });
   };
 
-  // The component's HTML (JSX)
   return (
     <div className="registration-container">
       <h1>BATTLESHIP</h1>
