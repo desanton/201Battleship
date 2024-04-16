@@ -1,6 +1,6 @@
-package backend;
+package backend.main.java.com.Battleship;
 
-public class ShipController{
+public class ShipController {
     // create user & opponent objects
     private User user = new User();
     private Opponent opponent = new Opponent();
@@ -74,7 +74,9 @@ public class ShipController{
      */
     public ShipController(){
 
-    }
+    public void endGame() {
 
+    }
 }
+
 

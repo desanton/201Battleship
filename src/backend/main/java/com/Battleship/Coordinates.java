@@ -1,6 +1,5 @@
-package backend;
-
-public class Coordinate {
+package backend.main.java.com.Battleship;
+public class Coordinates {
     // x coordinate
     int x;
     
