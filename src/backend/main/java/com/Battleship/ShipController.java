@@ -1,29 +1,31 @@
 package backend.main.java.com.Battleship;
 
 public class ShipController {
-    //Main game function
-    private User usr;
-    private Opponent opnt;
-    public void runGame() {
-        startGame();
+    
+    
+    // where the whole game is running
+    public void startGame(){
+        //create user & opponent objects
+        User user = new User();
+    }
 
-        boolean noWinner = true;
-        while(noWinner) {
-            //user or opponent attacks
-            //if user, query for which coordinate they want to attack
+
+    // if attack() returns T, tell user success
+    // else tell user failed attack
+    // maybe we should do 
+    public String attackSuccess(User user){
+        String output;
+
+        if(user.attack()){
+            output = "Successful attack!";
         }
-    }
-    
-    
-    public void startGame() {
-        //Somewhere we have to query the user for where they want to put their ships
-        //Create User and Opponent and place their ships
+        else{
+            output = "Unsuccessful attack.";
+        }
 
+        return output;
     }
 
-    public void updateGameStatus() {
-        
-    }
 
     public void determineWinner() {
 
@@ -33,3 +35,5 @@ public class ShipController {
 
     }
 }
+
+
