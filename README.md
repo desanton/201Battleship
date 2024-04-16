@@ -18,7 +18,7 @@ First, ensure the backend is running:
 2. Compile and run the Java application:
 
 ```bash
-javac -d bin -cp "lib/*" src/main/java/com/battleship201/Main.java
+javac -d bin -cp "lib/*:lib/jbcrypt.jar" $(find src/main/java -name "*.java")
 java -cp "bin:lib/*" com.battleship201.Main
 ```
 
