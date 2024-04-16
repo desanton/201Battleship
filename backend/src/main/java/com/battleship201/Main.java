@@ -1,32 +1,46 @@
 package com.battleship201;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import com.battleship201.controller.RegistrationServlet;
+import javax.servlet.http.HttpServlet;
+import org.apache.catalina.startup.Tomcat;
+import org.apache.catalina.Context;
+import org.apache.catalina.LifecycleException;
+import java.io.File;
+// import java.util.logging.ConsoleHandler;
+// import java.util.logging.Level;
+// import java.util.logging.Logger;
 
 public class Main {
     public static void main(String[] args) {
-        // Database URL and credentials
-        String jdbcUrl = "jdbc:mysql://localhost:3306/BattleshipDB";
-        String username = "root"; //Create a connection on mySQL workbench and replace with your own username
-        String password = "Ea031903"; //Create a connection on mySQL workbench and replace with your own password
+        // Logger tomcatLogger = Logger.getLogger("org.apache");
+        // ConsoleHandler consoleHandler = new ConsoleHandler();
+        // consoleHandler.setLevel(Level.ALL);  // Capture all levels of log
+        // tomcatLogger.addHandler(consoleHandler);
+        // tomcatLogger.setLevel(Level.ALL);  // Set logger to capture all levels
 
-        // Load MySQL JDBC driver
+        // // Other loggers you might want to check
+        // Logger.getLogger("org.apache.catalina.core").setLevel(Level.ALL);
+
+        Tomcat tomcat = new Tomcat();
+        tomcat.setPort(8080);
+
+        String contextPath = "";
+        String docBase = new File("webapp").getAbsolutePath();
+        Context context = tomcat.addWebapp(contextPath, docBase);
+
+        // Add servlet and map it
+        String servletName = "RegistrationServlet";
+        HttpServlet servlet = new RegistrationServlet();
+        Tomcat.addServlet(context, servletName, servlet);
+        context.addServletMappingDecoded("/register", servletName);
+
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            System.out.println("MySQL JDBC driver loaded successfully.");
-        } catch (ClassNotFoundException e) {
-            System.out.println("MySQL JDBC Driver not found.");
-            e.printStackTrace();
-            return;
-        }
-
-        // Connect to the database
-        try (Connection connection = DriverManager.getConnection(jdbcUrl, username, password)) {
-            System.out.println("Connected to the database successfully.");
-        } catch (SQLException e) {
-            System.out.println("Connection failed.");
+            tomcat.start();
+            tomcat.getServer().await();
+        } catch (LifecycleException e) {
             e.printStackTrace();
         }
     }
 }
+
+

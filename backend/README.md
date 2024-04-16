@@ -21,7 +21,7 @@ String password = "password"; // Replace with your database password
 To compile and run the backend service, navigate to the backend directory in your terminal and execute the following commands:
 
 ```bash
-javac -d bin -cp "lib/*" src/main/java/com/battleship201/Main.java
+javac -d bin -cp "lib/*:lib/jbcrypt.jar" $(find src/main/java -name "*.java")
 java -cp "bin:lib/*" com.battleship201.Main
 ```
 
