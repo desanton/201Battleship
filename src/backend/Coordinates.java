@@ -1,3 +1,4 @@
+package backend;
 public class Coordinates {
     // x coordinate
     int x;
