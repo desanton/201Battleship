@@ -1,0 +1,12 @@
+.game-board-page {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around;
+  }
+  
+  .player-board,
+  .opponent-board {
+    flex: 1; 
+    margin: 0 10px; 
+  }
+  
