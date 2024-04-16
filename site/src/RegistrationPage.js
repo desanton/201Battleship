@@ -39,42 +39,83 @@ function RegistrationPage() {
   };
 
   return (
-    <div className="registration-container">
-      <h1>BATTLESHIP</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="confirm-password">Confirm Password:</label>
-          <input
-            type="password"
-            id="confirm-password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">CREATE ACCOUNT</button>
-      </form>
+    <body>
+    <div className="navigation">
+        <nav className="navbar">
+          <nav class="navbar">
+            <div class="navbar-container">
+                <h1>Battleship Game</h1>
+            </div>
+          </nav>
+        </nav>
     </div>
+    <main>
+      <div className="registration-container-wrapper">
+        <div className="registration-container">
+          <h2>REGISTRATION</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="username">Username: </label>
+              <input
+                type="text"
+                id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password: </label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="confirm-password">Confirm Password: </label>
+              <input
+                type="password"
+                id="confirm-password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+            </div>
+            <button type="submit"  class="button">CREATE ACCOUNT</button>
+          </form>
+        </div>
+        <div className="registration-container">
+          <h2>LOGIN</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group" id="loginUser">
+              <label htmlFor="login-username">Username: </label>
+              <input
+                type="text"
+                id="login-username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group" id="loginPass">
+              <label htmlFor="login-password">Password: </label>
+              <input
+                type="password"
+                id="login-password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <button type="submit" class="button" id="loginButton">LOGIN ACCOUNT</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
   );
 }
 
