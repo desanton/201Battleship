@@ -1,5 +1,7 @@
 package backend;
 
-public class Opponent {
-    
+public class Opponent extends Player {
+    public boolean attack(Coordinate C) {
+        
+    }
 }
