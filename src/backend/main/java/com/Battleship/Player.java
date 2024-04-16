@@ -1,4 +1,4 @@
-package backend;
+package backend.main.java.com.Battleship;
 
 public class Player {
     private ArrayList<Ship> Ships;

@@ -1,4 +1,4 @@
-package backend;
+package backend.main.java.com.Battleship;
 import java.util.Set;
 
 public class Ship {
