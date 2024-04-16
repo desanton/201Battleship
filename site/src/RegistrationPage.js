@@ -1,15 +1,41 @@
 import React, { useState } from 'react';
 import './RegistrationPage.css';
 
-
 function RegistrationPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('Submitted:', { username, password, confirmPassword });
+    
+    if(password !== confirmPassword) {
+      alert('Passwords do not match!');
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:8080/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await response.json();
+      
+      if (response.ok) {
+        console.log('Registration successful', data);
+        setUsername('');
+        setPassword('');
+        setConfirmPassword('');
+      } else {
+        console.error('Registration failed', data);
+      }
+    } catch (error) {
+      console.error('There was an error registering the user:', error);
+    }
   };
 
   return (
