@@ -10,7 +10,7 @@ public class ShipController{
 
 
     /*
-     *  where the whole game is running
+     * where the whole game is running
     */
     public void runGame(){
         
@@ -18,9 +18,9 @@ public class ShipController{
 
 
     /*
-     *  if attack() returns T, tell user success
-     *  else tell user failed attack
-     *  maybe we should do 
+     * if attack() returns T, tell user success
+     * else tell user failed attack
+     * maybe we should do 
     */
     public String attackSuccess(){
         String output;
@@ -36,8 +36,8 @@ public class ShipController{
     }
 
     /* 
-     *  call on every turn to check for winners
-     *  check if size of attacked set = total # ships
+     * call on every turn to check for winners
+     * check if size of attacked set = total # ships
      * return 1 for user win, 0 for opponent win, -1 for no winner yet
     */
     public int determineWinner(){
@@ -52,9 +52,9 @@ public class ShipController{
     }
     
     /*
-     *  param: get result from determineWinner()
-     *  save game stats
-     *  tell user congrats/better luck next time
+     * param: get result from determineWinner()
+     * save game stats
+     * tell user congrats/better luck next time
     */
     public String endGame(int w){
         int winner = determineWinner();
@@ -70,7 +70,7 @@ public class ShipController{
 
 
     /*
-     *  constructor
+     * constructor
      */
     public ShipController(){
 
