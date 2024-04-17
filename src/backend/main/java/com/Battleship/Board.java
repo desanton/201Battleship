@@ -39,5 +39,16 @@ public class Board {
         board[c.x][c.y].setStatus(s);
 
     }
+
+    // for backend testing
+    public displayBoard() {
+        for (int x = 0; x < 10; x++) {
+            for (int y = 0; y < 10; y++) {
+                System.out.print(board[x][y] + " ");
+            }
+            System.out.println();
+        }
+    }
+
 }
 
