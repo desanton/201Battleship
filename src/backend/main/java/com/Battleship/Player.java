@@ -6,6 +6,8 @@ public class Player {
 
     Set<Coordinates> attackPoints = new HashSet<>();
 
+    private Board board = new Board();
+
     void placeAllShips() {
         //?
     } 
@@ -37,6 +39,7 @@ public class Player {
             }
         }
 
+        board.placeShipOnBoard(x1, y1, x2, y2);
         userShips.add(new Ship(tempShip, type));
         return true;
     }

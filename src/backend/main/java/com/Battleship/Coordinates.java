@@ -26,4 +26,8 @@ public class Coordinates {
         this.y = y;
         s = 0;
     }
+
+    public void setStatus(int s){
+        this.s = s;
+    }
 }
