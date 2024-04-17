@@ -30,4 +30,9 @@ public class Coordinates {
     public void setStatus(int s){
         this.s = s;
     }
+
+    public int getStatus() {
+        return s;
+    }
+    
 }
