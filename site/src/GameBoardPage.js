@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import Grid from './Grid'; // Import the Grid component
+import Grid from './Grid'; 
 import './GameBoard.css';
 
 const GameBoardPage = () => {
   
-  // State variables for wins and losses
   const [wins, setWins] = useState(0);
   const [losses, setLosses] = useState(0);
 
-  // State variable to store ship coordinates
   const [shipCoordinates, setShipCoordinates] = useState({
     aircraftCarrier: '',
     battleship: '',
@@ -17,17 +15,15 @@ const GameBoardPage = () => {
     destroyer: ''
   });
 
-  // Function to handle ship placement
   const handleShipPlacement = (shipType, coordinates) => {
-    // Add your logic here to handle ship placement
+    // Add logic to handle ship placement
     console.log('Placing ship:', shipType, 'at coordinates:', coordinates);
-    // Update the ship coordinates in the state
+    // Update ship coordinates in the state
     setShipCoordinates({ ...shipCoordinates, [shipType]: coordinates });
   };
 
-  // Function to handle starting the game
   const handleStartGame = () => {
-    // Add your logic here to start the game
+    // Add logic to start the game
     console.log('Starting the game...');
   };
 
