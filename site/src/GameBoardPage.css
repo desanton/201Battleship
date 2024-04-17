@@ -1,17 +1,17 @@
 .game-board-page {
   display: flex;
-  flex-direction: column; /* Change to column layout */
-  align-items: center; /* Align items (header and boards) horizontally */
+  flex-direction: column;
+  align-items: center;
 }
 
 .header {
-  margin-bottom: 20px; /* Add some space below the header */
+  margin-bottom: 20px;
 }
 
 .game-board-container {
   display: flex;
   justify-content: space-around;
-  width: 55%; /* Ensure boards fill the width */
+  width: 55%;
 }
 
 .player-board,
@@ -25,5 +25,5 @@
 }
 
 .input-small {
-  width: 50px; /* Adjust the width as needed */
+  width: 50px;
 }
