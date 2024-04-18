@@ -1,10 +1,10 @@
 package backend.main.java.com.Battleship;
 public class Coordinates {
     // x coordinate
-    int x;
+    public int x;
     
     // y coordinate
-    int y;
+    public int y;
 
     // status of coordinate
     /*

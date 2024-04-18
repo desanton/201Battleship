@@ -73,6 +73,7 @@ public class ShipController {
      * constructor
      */
     public ShipController(){
+    }
 
     public void endGame() {
 
