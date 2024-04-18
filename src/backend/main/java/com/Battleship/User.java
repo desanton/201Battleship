@@ -4,6 +4,7 @@ public class User extends Player {
     private Vector<Coordinates> attackPoints;
     private Vector<Ship> userShips;
     private Board board;
+    private int sunkenShips = 0;
 
     public User() {
         super();

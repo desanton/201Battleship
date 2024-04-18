@@ -6,6 +6,7 @@ public class Opponent extends Player {
     private Vector<Coordinates> attackPoints;
     private Vector<Ship> oppShips;
     private Board board;
+    private int sunkenShips = 0;
 
     public Opponent() {
         super();
