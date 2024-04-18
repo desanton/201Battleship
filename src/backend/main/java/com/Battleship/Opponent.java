@@ -5,9 +5,6 @@ public class Opponent extends Player {
 
     public Opponent() {
         super();
-        attackPoints = new Vector<Coordinates>();
-        oppShips = new Vector<Ship>();
-        board = new Board();
     }
 
     /**
@@ -25,12 +22,12 @@ public class Opponent extends Player {
      */
     public boolean setOpponentAttack(Coordinates c) {
 
-        if (board[c.x][c.y].getStatus() == 0) {
+        if (board.board[c.x][c.y].getStatus() == 0) {
             // miss
             board.updateCoordStatus(c, 3);
             return false;
         }
-        else if (board[c.x][c.y].getStatus() == 1) {
+        else if (board.board[c.x][c.y].getStatus() == 1) {
             // hit
             board.updateCoordStatus(c, 4);
             
@@ -39,7 +36,7 @@ public class Opponent extends Player {
             Set<Coordinates> shipCoordinates;
             
             // check and update if hit causes ship to sink
-            for (Ship ship: oppShips) {
+            for (Ship ship: playerShips) {
                 shipCoordinates = ship.getCoordinates();
                 if (shipCoordinates.contains(c)){
                     sink = ship.updateHitCount();
