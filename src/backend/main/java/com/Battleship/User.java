@@ -7,7 +7,7 @@ public class User extends Player {
     
     // used for the opponent/computer to attack user board
     public boolean setUserAttack(Coordinate C) {
-        
+
     }
 
     // used to get coordinate from user and attack opponent board
@@ -21,6 +21,16 @@ public class User extends Player {
         
 
         // attack opponent board
+
+
+            // QUESTION::: should we create sets (attackPoints, userShips, etc) in the 
+            //             User & Opponent classes bc otherwise we r accessing the same
+            //             one for both players i think
+            // - erika
+        // add this coordinate to the User's attacked points set
+        attackPoints.add(C);
+
+
         return setOpponentAttack(c);
 
     }
