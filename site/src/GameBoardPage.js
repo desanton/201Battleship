@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import Grid from './Grid'; 
+import Grid from './Grid';
 import './GameBoard.css';
+import GamePlayPage from './GamePlayPage'; // Import the GamePlayPage component
 
 const GameBoardPage = () => {
-  
+  // State variables for wins and losses
   const [wins, setWins] = useState(0);
   const [losses, setLosses] = useState(0);
-
+  // State variable to store ship coordinates
   const [shipCoordinates, setShipCoordinates] = useState({
     aircraftCarrier: '',
     battleship: '',
@@ -14,17 +15,20 @@ const GameBoardPage = () => {
     submarine: '',
     destroyer: ''
   });
+  const [gameStarted, setGameStarted] = useState(false);
 
   const handleShipPlacement = (shipType, coordinates) => {
-    // Add logic to handle ship placement
+    // Add your logic here to handle ship placement
     console.log('Placing ship:', shipType, 'at coordinates:', coordinates);
-    // Update ship coordinates in the state
+    // Update the ship coordinates in the state
     setShipCoordinates({ ...shipCoordinates, [shipType]: coordinates });
   };
 
   const handleStartGame = () => {
-    // Add logic to start the game
+    // Add your logic here to start the game
     console.log('Starting the game...');
+    // Set gameStarted to true
+    setGameStarted(true);
   };
 
   return (
@@ -35,56 +39,24 @@ const GameBoardPage = () => {
       <div className="stats">
         <div>Wins: {wins}</div>
         <div>Losses: {losses}</div>
-      </div>    
-      <div className="game-board-container">
-        <div className="player-board">
-          <h2>Player's Board</h2>
-          <Grid />
-        </div>
-        <div className="opponent-board">
-          <h2>Opponent's Board</h2>
-          <Grid />
-        </div>
       </div>
-      <div className="ship-inputs">
-            <h3>Ship Placement:</h3>
-            <div>
-              <label>Aircraft Carrier:</label>
-              <input type="text" placeholder="Start X" className="input-small" />
-              <input type="text" placeholder="Start Y" className="input-small" />
-              <input type="text" placeholder="End X" className="input-small" />
-              <input type="text" placeholder="End Y" className="input-small" />
+      {!gameStarted ? ( // Render initial setup if the game hasn't started
+        <div className="initial-setup">
+          <div className="game-board-container">
+            <div className="player-board">
+              <h2>Player's Board</h2>
+              <Grid />
             </div>
-            <div>
-              <label>Battleship:</label>
-              <input type="text" placeholder="Start X" className="input-small" />
-              <input type="text" placeholder="Start Y" className="input-small" />
-              <input type="text" placeholder="End X" className="input-small" />
-              <input type="text" placeholder="End Y" className="input-small" />
+            <div className="opponent-board">
+              <h2>Opponent's Board</h2>
+              <Grid />
             </div>
-            <div>
-              <label>Cruiser:</label>
-              <input type="text" placeholder="Start X" className="input-small" />
-              <input type="text" placeholder="Start Y" className="input-small" />
-              <input type="text" placeholder="End X" className="input-small" />
-              <input type="text" placeholder="End Y" className="input-small" />
-            </div>
-            <div>
-              <label>Submarine:</label>
-              <input type="text" placeholder="Start X" className="input-small" />
-              <input type="text" placeholder="Start Y" className="input-small" />
-              <input type="text" placeholder="End X" className="input-small" />
-              <input type="text" placeholder="End Y" className="input-small" />
-            </div>
-            <div>
-              <label>Destroyer:</label>
-              <input type="text" placeholder="Start X" className="input-small" />
-              <input type="text" placeholder="Start Y" className="input-small" />
-              <input type="text" placeholder="End X" className="input-small" />
-              <input type="text" placeholder="End Y" className="input-small" />
-            </div>
-            <button onClick={handleStartGame}>Start Game</button>
           </div>
+            <button onClick={handleStartGame}>Start Game</button>
+        </div>
+      ) : ( // Render GamePlayPage if the game has started
+        <GamePlayPage />
+      )}
     </div>
   );
 };
