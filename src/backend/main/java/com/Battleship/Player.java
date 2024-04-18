@@ -2,9 +2,9 @@ package backend.main.java.com.Battleship;
 
 public class Player {
     
-    Set<Ship> userShips = new HashSet<>();
-
-    Set<Coordinates> attackPoints = new HashSet<>();
+    // not sure if we need these sets anymore because we have vectors for each in the user & opponent classes
+    //Set<Ship> userShips = new HashSet<>();
+    //Set<Coordinates> attackPoints = new HashSet<>();
 
     private Board board = new Board();
 
@@ -12,9 +12,7 @@ public class Player {
         //?
     } 
 
-    private boolean placeShip(Coordinate C1, Coordinate C2, char type, int size) {
-        int x1 = C1.x; int y1 = C1.y; int x2 = C2.x; int y2 = C2.y;
-        
+    private boolean placeShip(int x1, int y1, int x2, int y2, char type, int size) {
         if (Math.abs(x2 - x1) != size - 1 && Math.abs(y2 - y1) != size - 1) return false;
         List<Coordinates> tempShip = new ArrayList<>();
 
@@ -41,29 +39,29 @@ public class Player {
             }
         }
 
-        board.placeShipOnBoard(C1, C2);
+        board.placeShipOnBoard(x1, y1, x2, y2);
         userShips.add(new Ship(tempShip, type));
         return true;
     }
 
-    private boolean placeAirCraftCarrier(Coordinate C1, Coordinate C2) {
-        return placeShip(C1, C2, 'A', 5);
+    private boolean placeAirCraftCarrier(int x1, int y1, int x2, int y2) {
+        return placeShip(x1, y1, x2, y2, 'A', 5);
     }
 
-    private boolean placeBattleship(Coordinate C1, Coordinate C2) {
-        return placeShip(C1, C2, 'B', 4);
+    private boolean placeBattleship(int x1, int y1, int x2, int y2) {
+        return placeShip(x1, y1, x2, y2, 'B', 4);
     }
 
-    private boolean placeCruiser(Coordinate C1, Coordinate C2) {
-        return placeShip(C1, C2, 'C', 3);
+    private boolean placeCruiser(int x1, int y1, int x2, int y2) {
+        return placeShip(x1, y1, x2, y2, 'C', 3);
     }
 
-    private boolean placeSubmarine(Coordinate C1, Coordinate C2) {
-        return placeShip(C1, C2,'S', 3);
+    private boolean placeSubmarine(int x1, int y1, int x2, int y2) {
+        return placeShip(x1, y1, x2, y2, 'S', 3);
     }
 
-    private boolean placeDestroyer(Coordinate C1, Coordinate C2) {
-        return placeShip(C1, C2, 'D', 2);
+    private boolean placeDestroyer(int x1, int y1, int x2, int y2) {
+        return placeShip(x1, y1, x2, y2, 'D', 2);
     }
 
     //user class handles attack()

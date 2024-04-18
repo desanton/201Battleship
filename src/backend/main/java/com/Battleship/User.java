@@ -1,6 +1,10 @@
 package backend.main.java.com.Battleship;
 
 public class User extends Player {
+    private Vector<Coordinates> attackPoints;
+    private Vector<Ship> userShips;
+    private Board board;
+
     public User() {
         super();
     }
@@ -14,19 +18,17 @@ public class User extends Player {
     public boolean getUserAttack() {
         Coordinate c;
         // get user attack
-            // TODO: add logic to get coordinate from front end user input
-            
-            // TODO: check if coordinates are within bounds
-
+        // TODO: add logic to get coordinate from front end user input
         
+        // TODO: check if coordinates are within bounds
+        if(c.getX() < 0 || c.getX() > 9 || c.getY() < 0 || c.getY() > 9){
+            // coordinates are out of bounds
+            return false;
+        }
+    
 
         // attack opponent board
 
-
-            // QUESTION::: should we create sets (attackPoints, userShips, etc) in the 
-            //             User & Opponent classes bc otherwise we r accessing the same
-            //             one for both players i think
-            // - erika
         // add this coordinate to the User's attacked points set
         attackPoints.add(C);
 
