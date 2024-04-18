@@ -16,6 +16,8 @@ public class Player {
     protected Board board;
 
     protected int sunkenShips;
+    
+    private static int numBoards = 0;
 
     public Player() {
         sunkenShips = 0;
@@ -23,6 +25,7 @@ public class Player {
         attackPoints = new HashSet<Coordinates>();
         board = getBoard();
         board.displayBoard();
+        numBoards++;
     }
 
     void placeAllShips() {
@@ -92,7 +95,7 @@ public class Player {
         long seed = System.currentTimeMillis();
         Random random = new Random(seed);
 
-        int rand = random.nextInt(4);
+        int rand = (random.nextInt(4) + numBoards) % 4;
 
         System.out.println("rand: " + rand);
 
@@ -168,7 +171,6 @@ public class Player {
 
     }
 
-    // for testing
 
 
 }
