@@ -1,10 +1,16 @@
 package backend.main.java.com.Battleship;
+
+import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 public class Opponent extends Player {
 
-    public Opponent() {
+    private User user;
+	
+	public Opponent(User user) {
         super();
+        this.user = user;
     }
 
     /**
@@ -33,11 +39,11 @@ public class Opponent extends Player {
             
             // get ship information
             boolean sink = false;
-            Set<Coordinates> shipCoordinates;
+            List<Coordinates> shipCoordinates;
             
             // check and update if hit causes ship to sink
             for (Ship ship: playerShips) {
-                shipCoordinates = ship.getCoordinates();
+                shipCoordinates = ship.getShipCoordinates(ship.type);
                 if (shipCoordinates.contains(c)){
                     sink = ship.updateHitCount();
                     break;
@@ -48,8 +54,9 @@ public class Opponent extends Player {
             if (sink) {
                 board.updateCoordStatus(c, 2);
             }
-            return true;
+            
         }
+        return true;
     }
 
 
@@ -64,7 +71,7 @@ public class Opponent extends Player {
         random = new Random(seed);
         int y = random.nextInt(10);
 
-        Coordinate c = new Coordinates(x, y);
+        Coordinates c = new Coordinates(x, y);
         while (attackPoints.contains(c)) {
             seed = System.currentTimeMillis();
             random = new Random(seed);
@@ -77,6 +84,13 @@ public class Opponent extends Player {
             c = new Coordinates(x, y);
         }
 
-        return setUserAttack(c);
+        return user.setUserAttack(c);
+    }
+    
+    public static void main(String [] args) {
+    	System.out.println("initializing user");
+    	User user = new User();
+    	System.out.println("initializing opp");
+    	Opponent opp = new Opponent(user);
     }
 }
