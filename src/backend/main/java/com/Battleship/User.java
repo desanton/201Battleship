@@ -18,7 +18,7 @@ public class User extends Player {
         // TODO: add logic to get coordinate from front end user input
         
         // TODO: check if coordinates are within bounds
-        if(c.getX() < 0 || c.getX() > 9 || c.getY() < 0 || c.getY() > 9){
+        if(c.x < 0 || c.x > 9 || c.y < 0 || c.y > 9){
             // coordinates are out of bounds
             return false;
         }
