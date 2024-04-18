@@ -7,7 +7,7 @@ package backend.main.java.com.Battleship;
 
 public class Board {
 
-    private Coordinates[][] board; 
+    public Coordinates[][] board; 
 
     public Board() {
         // initialize empty board
