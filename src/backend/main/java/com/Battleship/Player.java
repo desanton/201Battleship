@@ -58,7 +58,7 @@ public class Player {
             }
         }
 
-        board.placeShipOnBoard(C1, C2);
+//        board.placeShipOnBoard(C1, C2);
         playerShips.add(new Ship(tempShip, type));
         return true;
     }
@@ -86,6 +86,7 @@ public class Player {
     // user class handles attack()
     // hard coded boards
     private Board getBoard(){
+    	System.out.println("in getBoard()");
         Board board = new Board();
 
         long seed = System.currentTimeMillis();
@@ -155,6 +156,13 @@ public class Player {
         placeCruiser(C1, C2);
         placeSubmarine(S1, S2);
         placeDestroyer(D1, D2); 
+        
+        board.placeShipOnBoard(A1, A2);
+        board.placeShipOnBoard(B1, B2);
+        board.placeShipOnBoard(C1, C2);
+        board.placeShipOnBoard(S1, S2);
+        board.placeShipOnBoard(D1, D2);
+        
         
         return board;
 
