@@ -2,9 +2,9 @@ package backend.main.java.com.Battleship;
 
 public class Player {
     
-    Set<Ship> userShips = new HashSet<>();
-
-    Set<Coordinates> attackPoints = new HashSet<>();
+    // not sure if we need these sets anymore because we have vectors for each in the user & opponent classes
+    //Set<Ship> userShips = new HashSet<>();
+    //Set<Coordinates> attackPoints = new HashSet<>();
 
     private Board board = new Board();
 
@@ -41,7 +41,7 @@ public class Player {
             }
         }
 
-        board.placeShipOnBoard(C1, C2);
+        board.placeShipOnBoard(x1, y1, x2, y2);
         userShips.add(new Ship(tempShip, type));
         return true;
     }
