@@ -15,7 +15,7 @@ const Cell = ({ onClick, status }) => {
 
 // Component for the grid
 const Grid = ({ onClick }) => {
-  const [grid, setGrid] = useState(Array(10).fill(Array(10).fill('empty')));
+  const [grid, setGrid] = useState(Array.from({ length: 10 }, () => Array(10).fill('empty')));
 
   const handleCellClick = (rowIndex, colIndex) => {
     onClick(rowIndex, colIndex);
@@ -33,6 +33,7 @@ const Grid = ({ onClick }) => {
     </div>
   );
 };
+
 
 // Main App component
 const App = () => {
