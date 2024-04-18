@@ -12,7 +12,7 @@ public class Player {
         //?
     } 
 
-    private boolean placeShip(Coordinate C1, Coordinate C2, char type, int size) {
+    private boolean placeShip(Coordinates C1, Coordinates C2, char type, int size) {
         int x1 = C1.x; int y1 = C1.y; int x2 = C2.x; int y2 = C2.y;
         
         if (Math.abs(x2 - x1) != size - 1 && Math.abs(y2 - y1) != size - 1) return false;
@@ -46,23 +46,23 @@ public class Player {
         return true;
     }
 
-    private boolean placeAirCraftCarrier(Coordinate C1, Coordinate C2) {
+    private boolean placeAirCraftCarrier(Coordinates C1, Coordinates C2) {
         return placeShip(C1, C2, 'A', 5);
     }
 
-    private boolean placeBattleship(Coordinate C1, Coordinate C2) {
+    private boolean placeBattleship(Coordinates C1, Coordinates C2) {
         return placeShip(C1, C2, 'B', 4);
     }
 
-    private boolean placeCruiser(Coordinate C1, Coordinate C2) {
+    private boolean placeCruiser(Coordinates C1, Coordinates C2) {
         return placeShip(C1, C2, 'C', 3);
     }
 
-    private boolean placeSubmarine(Coordinate C1, Coordinate C2) {
+    private boolean placeSubmarine(Coordinates C1, Coordinates C2) {
         return placeShip(C1, C2,'S', 3);
     }
 
-    private boolean placeDestroyer(Coordinate C1, Coordinate C2) {
+    private boolean placeDestroyer(Coordinates C1, Coordinates C2) {
         return placeShip(C1, C2, 'D', 2);
     }
 

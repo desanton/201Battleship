@@ -11,11 +11,9 @@ public class User extends Player {
     }
 
     // used to get coordinate from user and attack opponent board
-    public boolean getUserAttack() {
-        Coordinate c;
+    public boolean getUserAttack(AttackRequest request) {
+        Coordinate c = request.c;
         // get user attack
-            // TODO: add logic to get coordinate from front end user input
-            
             // TODO: check if coordinates are within bounds
 
         
@@ -32,6 +30,5 @@ public class User extends Player {
 
 
         return setOpponentAttack(c);
-
     }
 }

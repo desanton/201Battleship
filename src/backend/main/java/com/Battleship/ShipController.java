@@ -11,21 +11,30 @@ public class ShipController {
 
     /*
      * where the whole game is running
+     * begins after the login/registration page
     */
     public void runGame(){
+        //start game, instantiate boards
         
+        //repeat until someones loses
+            //If user's turn
+                //AttackRequest
+            //If opponent's turn
+                //Random attack
+            //Output outcome
     }
 
+    
 
     /*
      * if attack() returns T, tell user success
      * else tell user failed attack
      * maybe we should do 
     */
-    public String attackSuccess(){
+    public String UserAttackSuccess(AttackRequest request){
         String output;
 
-        if(user.attack()){
+        if(user.getUserAttack()){
             output = "Successful attack!";
         }
         else{

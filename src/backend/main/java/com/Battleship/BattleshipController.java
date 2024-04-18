@@ -20,10 +20,11 @@ public class BattleshipController {
         this.battleshipService = battleshipService;
     }
 
-    // @PostMapping("/attack")
-    // public ResponseEntity<Void> attack(@RequestBody AttackRequest request) {
-    //      
-    //     return ResponseEntity.ok().build();
-    // }
+    @PostMapping("/attack")
+    public ResponseEntity<Void> attack(@RequestBody AttackRequest request) {
+        // Pass the attack request to the battleship service to process the attack
+        battleshipService.processAttack(request);
+        return ResponseEntity.ok().build();
+    }
     // Add other controller methods for game actions
 }
