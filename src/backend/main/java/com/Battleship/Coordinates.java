@@ -1,10 +1,10 @@
 package backend.main.java.com.Battleship;
 public class Coordinates {
     // x coordinate
-    public int x;
+    private int x;
     
     // y coordinate
-    public int y;
+    private int y;
 
     // status of coordinate
     /*
@@ -14,7 +14,7 @@ public class Coordinates {
      * 3 = attacked empty
      * 4 = attacked occupied
      */
-    int s;
+    private int s;
 
     /*
      * CONSTRUCTOR

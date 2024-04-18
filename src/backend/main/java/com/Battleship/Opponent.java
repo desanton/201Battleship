@@ -2,11 +2,6 @@ package backend.main.java.com.Battleship;
 import java.util.Random;
 
 public class Opponent extends Player {
-    // vector to track all attacked from opponent/computer board
-    private Vector<Coordinates> attackPoints;
-    private Vector<Ship> oppShips;
-    private Board board;
-    private int sunkenShips = 0;
 
     public Opponent() {
         super();
