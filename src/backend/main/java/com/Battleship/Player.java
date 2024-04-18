@@ -1,4 +1,4 @@
-package Battleship;
+package backend.main.java.com.Battleship;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -9,13 +9,13 @@ import java.util.Vector;
 
 public class Player {
     
-    private Vector<Ship> playerShips;
+    protected Vector<Ship> playerShips;
 
-    private Set<Coordinates> attackPoints;
+    protected Set<Coordinates> attackPoints;
 
-    private Board board;
+    protected Board board;
 
-    private int sunkenShips;
+    protected int sunkenShips;
 
     public Player() {
         sunkenShips = 0;
@@ -169,9 +169,6 @@ public class Player {
     }
 
     // for testing
-    public static void main(String[] args) { 
-        Player player = new Player();
-    }
 
 
 }
