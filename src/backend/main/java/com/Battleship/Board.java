@@ -19,7 +19,7 @@ public class Board {
         }
     }
 
-    public placeShipOnBoard(Coordinate C1, Coordinate C2) {
+    public void placeShipOnBoard(Coordinate C1, Coordinate C2) {
         // assuming the coordinates are within bounds and conflict with other pre-existing ships
         if (x1 == x2) {
             for (int y = Math.min(y1, y2); y <= Math.max(y1, y2); y++) {
@@ -35,13 +35,12 @@ public class Board {
         }
     }
 
-    public updateCoordStatus(Coordinate c, int s){ 
+    public void updateCoordStatus(Coordinate c, int s){ 
         board[c.x][c.y].setStatus(s);
-
     }
 
     // for backend testing
-    public displayBoard() {
+    public void displayBoard() {
         for (int x = 0; x < 10; x++) {
             for (int y = 0; y < 10; y++) {
                 System.out.print(board[x][y] + " ");
