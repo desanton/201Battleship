@@ -14,7 +14,7 @@ public class Coordinates {
      * 3 = attacked empty
      * 4 = attacked occupied
      */
-    public int s;
+    int s;
 
     /*
      * CONSTRUCTOR
@@ -26,5 +26,14 @@ public class Coordinates {
         this.y = y;
         s = 0;
     }
+
+    public void setStatus(int s){
+        this.s = s;
+    }
+
+    public int getStatus() {
+        return s;
+    }
     
 }
+
