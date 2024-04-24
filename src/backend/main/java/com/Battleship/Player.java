@@ -38,6 +38,7 @@ public class Player {
         if (Math.abs(x2 - x1) != size - 1 && Math.abs(y2 - y1) != size - 1) return false;
         List<Coordinates> tempShip = new ArrayList<>();
 
+        // add coordinates to ship
         if (x1 == x2) {
             for (int y = Math.min(y1, y2); y <= Math.max(y1, y2); y++) {
                 tempShip.add(new Coordinates(x1, y));
@@ -57,12 +58,14 @@ public class Player {
                 // if ship has coordinate
                 if (ship.coordinates.contains(c)) {
                     return false; // false if coordinate is taken
+                } else {
+                	
                 }
             }
         }
 
-//        board.placeShipOnBoard(C1, C2);
-        playerShips.add(new Ship(tempShip, type));
+        // 
+        playerShips.add(new Ship(tempShip, type, size));
         return true;
     }
 
@@ -89,6 +92,7 @@ public class Player {
     // user class handles attack()
     // hard coded boards
     private Board getBoard(){
+    	
     	System.out.println("in getBoard()");
         Board board = new Board();
 
