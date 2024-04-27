@@ -1,0 +1,108 @@
+	body{
+		margin:0;
+		font-family:sans-serif;
+	}
+	.navbar {
+       background-color: #333;
+       color: #fff;
+       padding: 10px 20px;
+       text-align: center; /* Center the title text */
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+   }
+
+   .navbar h1 {
+       margin: 0;
+       color: #fff; /* Explicitly setting the navbar title to white */
+   }
+
+   .nav-link {
+       color: #fff; /* Set the color of the link to white */
+       text-decoration: none;
+       padding: 8px 15px;
+       margin-right: 10px;
+   }
+
+   .nav-link:hover {
+       text-decoration: underline;
+   }
+   
+   .navbar a{
+   	color:#333;
+   
+   }
+  .registration-container {
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+   
+    flex: 1;
+    margin-right: 10px;
+    height: 800px;
+    
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  label {
+    margin-bottom: 5px;
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+  	width:200px;
+    padding: 10px;
+    background-color: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .registration-container-wrapper {
+    display: flex;
+  }
+
+  .login-container {
+    flex: 1;
+    margin-left: 10px; 
+  }
+
+  .navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-container h1 {
+    margin: 0;
+  }
+
+  .navbar-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .nav-item {
+    margin-left: 10px;
+  }
+
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+
+  #loginUser, #loginPass {
+    margin-top: 20px;
+  }

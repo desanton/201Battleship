@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif; /* Ensures consistent font across different browsers */
+    text-align: center; /* Centers all text inside the body, including the title */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* A light gray background color for slight contrast */
+}
+
+h1 {
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.board-container {
+    display: flex;
+    justify-content: center;  /* Align boards in the center */
+    gap: 40px;                /* Space between the two boards */
+    margin-top: 20px;
+}
+
+.name-container {
+    display: flex;
+    justify-content: center;  /* Align boards in the center */
+    gap: 200px;                /* Space between the two boards */
+    margin-top: 20px;
+}
+
+.coordinates-display {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.gameBoard {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+    margin: 10px;
+    margin-top: 40px;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Adding a subtle shadow for better visibility */
+}
+
+.gameBoard h2 {
+    text-align: center;
+    margin-bottom: 20px; /* Space between the header and the board */
+    margin-top: 10px;
+}
+
+.gameBoard div {
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+    background-color: lightblue;
+}
+
+.gameBoard div.hit {
+    background-color: red;
+}
+
+.gameBoard div.miss {
+    background-color: grey;
+}
+
+.gameBoard div.hitall {
+    background-color: black;
+}
+
+.legend {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.legend-item {
+    margin: 5px;
+    font-size: 16px;
+}

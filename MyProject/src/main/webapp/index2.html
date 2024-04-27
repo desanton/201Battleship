@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center; /* Center the title text */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            color: #fff; /* Explicitly setting the navbar title to white */
+        }
+
+        .nav-link {
+            color: #fff; /* Set the color of the link to white */
+            text-decoration: none;
+            padding: 8px 15px;
+            margin-right: 10px;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        
+        .end {
+        	display: none;
+        	margin-top: 20px;
+    		text-align: center;
+    		font-size: 300px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Battleship</h1>
+        <a href="login.html" class="nav-link">Login/Register</a>
+    </nav>
+    <div id="hide">
+	    <div class="board-container">
+	        <div id="playerBoard" class="gameBoard"></div>
+	        <div id="opponentBoard" class="gameBoard"></div>
+	    </div>
+	    <div class="name-container">
+	        <h2>Guest Board</h2>
+	        <h2>Opponent's Board</h2>
+	    </div>
+	    <div id="coordinatesDisplay" class="coordinates-display">Show coordinates.</div>
+	    <div class="legend">
+	        <h3>Legend</h3>
+	        <div class="legend-item" style="color: red;">Red = Hit ship</div>
+	        <div class="legend-item" style="color: black;">Black = Sunk entire ship</div>
+	        <div class="legend-item" style="color: grey;">Grey = Missed attack</div>
+	    </div>
+	 </div>
+	 <div id="end">Player Won! Game Over</div> 
+    <script src="script2.js"></script>
+</body>
+</html>
