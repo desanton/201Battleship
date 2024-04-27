@@ -1,45 +1,20 @@
 
 # Battleship Full-stack Application
 
-This project is a full-stack Battleship game with a React frontend and a Java backend.
+This project is a full-stack Battleship game with HTML/CSS/JS frontend and a Java backend.
 
 ## Project Structure
 
-- `/site`: Contains the React application (frontend)
-- `/backend`: Contains the Java application (backend)
+- `/java/Battleship`: Contains the backend files
+- `/webapp`: Contains the front end files
 
 ## Running the Project
 
-### Backend
+1. Start Tomcat v 9.0
+2. Open the webapp folder and find "index2.html"
+3. Run "index2.html" with Tomcat
+4. The project should open in a new browser
 
-First, ensure the backend is running:
-
-1. Navigate to the `backend` folder.
-2. Compile and run the Java application:
-
-```bash
-javac -d bin -cp "lib/*:lib/jbcrypt.jar" $(find src/main/java -name "*.java")
-java -cp "bin:lib/*" com.battleship201.Main
-```
-
-The backend will start and listen for incoming requests on the designated port.
-
-## Frontend
-To get the frontend running, follow these steps:
-1. Navigate to the site folder.
-1. Install the necessary npm packages:
-
-```bash
-npm install
-```
-
-Start the React development server:
-
-```bash
-npm start
-```
-
-This will launch the React application in your default web browser. By default, the development server starts on http://localhost:3000.
 
 ### Using the Application
-With both the backend and frontend services running, you can use the application by accessing http://localhost:3000 in your web browser. The React application will communicate with the backend to perform operations like user registration and game state management.
+The project begins on the Guest player screen. The game starts once you begin guessing points on your opponents board. To Register or Log in, click the Register/Log In button in the top right of the Navigation bar. This will redirect you to the registration page where you can either create a new account, or log into an existing one. Once logged in, the game page will display the number of the current user's previous wins and losses, and the navigation bar should now have an option to "Logout".
